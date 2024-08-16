@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\serviciosextras;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\bookingController;
+use App\Http\Controllers\ReporteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,6 @@ Route::middleware('api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/service-extras', [serviciosextras::class, 'index']);
-    Route::post('/generate-pdf', [mailController::class, 'generateAndSendPDF']);
+    Route::get('/email', [ReporteController::class, 'sendHelloMail']);
     Route::post('/carros', [bookingController::class, 'store']);
 });
