@@ -21,7 +21,7 @@
                 "shasum": ""
             },
             "require": {
-                "dompdf/dompdf": "^3.0",
+
                 "illuminate/support": "^9|^10|^11",
                 "php": "^8.1"
             },
@@ -38,17 +38,16 @@
                 },
                 "laravel": {
                     "providers": [
-                        "Barryvdh\\DomPDF\\ServiceProvider"
+
                     ],
                     "aliases": {
-                        "Pdf": "Barryvdh\\DomPDF\\Facade\\Pdf",
-                        "PDF": "Barryvdh\\DomPDF\\Facade\\Pdf"
+
                     }
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Barryvdh\\DomPDF\\": "src"
+                   
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
