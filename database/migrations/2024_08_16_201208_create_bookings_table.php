@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->string('marca');
             $table->string('modelo');
             $table->string('anio');
             $table->string('color');
+            $table->string('servicio_extra');
             $table->string('nombre');
             $table->string('fecha');
             $table->string('nombre_cliente');

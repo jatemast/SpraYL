@@ -12,10 +12,11 @@ class bookingController extends Controller
     {
 
         $validation = Validator::make($request->all(), [
-            'marca' => 'required|string|max:255',
+    'marca' => 'required|string|max:255',
     'modelo' => 'required|string|max:255',
     'anio' => 'required|string|max:255',
     'color' => 'required|string|max:255',
+    'servicio_extra' => 'required|string|max:255',
     'nombre' => 'required|string|max:255',
     'fecha' => 'required|date',
     'nombre_cliente' => 'required|string|max:255',
