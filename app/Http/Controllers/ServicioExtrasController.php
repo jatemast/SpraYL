@@ -3,17 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\service_extra;
+use App\Models\ServiceExtra;
 
-class serviciosextras extends Controller
+class ServicioExtrasController extends Controller
 {
     public function index()
     {
-        $serviceExtras = service_extra::all(); // Usa el nombre correcto del modelo
+        $serviceExtras = ServiceExtra::all(); // Usa el modelo correcto
         return response()->json($serviceExtras);
     }
-
-
-
-
 }

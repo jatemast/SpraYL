@@ -4,29 +4,32 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\service_extra;
-use GuzzleHttp\Promise\Create;
+use App\Models\ServiceExtra;
 
-class ServiceExtraSeeder extends Seeder
+
+class ServiceExtraseeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        service_extra::create([
+        
+        
+        ServiceExtra::create([
             'service' => 'ArmorAll Treatment',
              'description' => 'limpieza profunda'
         ]);
 
-        service_extra::create([
+        ServiceExtra::create([
             'service' => 'ArmorAll proo ',
               'description' => 'limpieza profunda'
         ]);
 
-        service_extra::create([
+        ServiceExtra::create([
             'service' => 'esponja y jabon ',
               'description' => 'limpieza profunda'
         ]);
+
     }
 }

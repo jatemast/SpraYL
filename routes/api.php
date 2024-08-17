@@ -7,6 +7,7 @@ use App\Http\Controllers\serviciosextras;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\ServicioExtrasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ use App\Http\Controllers\ReporteController;
 Route::middleware('api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
-    Route::get('/service-extras', [serviciosextras::class, 'index']);
-    Route::get('/email', [ReporteController::class, 'sendHelloMail']);
+    Route::get('/service-extras', [ServicioExtrasController::class, 'index']);
     Route::post('/Booking', [bookingController::class, 'store']);
+    Route::get('/email', [ReporteController::class, 'sendHelloMail']);
 });
