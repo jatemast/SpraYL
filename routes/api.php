@@ -3,9 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\serviciosextras;
 use App\Http\Controllers\mailController;
-use App\Http\Controllers\bookingController;
+ 
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ServicioExtrasController;
 
@@ -24,6 +25,6 @@ Route::middleware('api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/service-extras', [ServicioExtrasController::class, 'index']);
-    Route::post('/booking', [bookingController::class, 'store']);
+    Route::post('/booking', [BookingController::class, 'store']);
     Route::get('/email', [ReporteController::class, 'sendHelloMail']);
 });

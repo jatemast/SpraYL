@@ -30,9 +30,10 @@ return new class extends Migration
             $table->string('codigo_postal_cliente', 10)->nullable();
             $table->text('peticion_cliente')->nullable();
             $table->text('descripcion_servicio')->nullable();
-            $table->boolean('dirt_charges')->nullable();
-            $table->boolean('acepto_veicle')->nullable();
-            $table->boolean('la_tos')->nullable();
+            $table->boolean('dirt_charges')->default(false);
+            $table->boolean('acepto_veicle')->default(false);
+            $table->boolean('la_tos')->default(false);
+            
             $table->date('fecha_servicio')->nullable();
             $table->timestamps();
         });
