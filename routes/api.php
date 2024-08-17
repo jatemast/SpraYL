@@ -24,5 +24,5 @@ Route::middleware('api')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/service-extras', [serviciosextras::class, 'index']);
     Route::get('/email', [ReporteController::class, 'sendHelloMail']);
-    Route::post('/carros', [bookingController::class, 'store']);
+    Route::post('/Booking', [bookingController::class, 'store']);
 });
