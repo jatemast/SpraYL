@@ -74,21 +74,26 @@ class CarSelectionController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getModelosPorCategoria(Request $request)
-    {
-        $request->validate([
-            'categoria_id' => 'required|exists:categorias,id',
-        ]);
-    
-        $categoriaId = $request->query('categoria_id'); // Usar query() en lugar de input() para GET
-    
-        $modelos = Modelo::where('categoria_id', $categoriaId)->get();
-    
-        return response()->json([
-            'status' => 'success',
-            'data' => $modelos
-        ]);
+    public function getModelosPorCategoria($categoria_id, $marca_id)
+{
+    // Validar que los IDs existan
+    if (!Categoria::where('id', $categoria_id)->exists() || !Marca::where('id', $marca_id)->exists()) {
+        return response()->json(['status' => 'error', 'message' => 'Invalid category or brand ID'], 400);
     }
+
+    // Filtrar los modelos por categoría y marca
+    $modelos = Modelo::where('categoria_id', $categoria_id)
+                     ->where('marca_id', $marca_id)
+                     ->get();
+
+    // Devolver los modelos como respuesta JSON
+    return response()->json([
+        'status' => 'success',
+        'data' => $modelos
+    ]);
+}
+
+    
 
 
     /**

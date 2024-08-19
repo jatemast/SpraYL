@@ -32,7 +32,8 @@ Route::middleware('api')->group(function () {
    Route::get('/marcas', [CarSelectionController::class, 'getMarcas']); // Rutas para obtener marcas exelente
    Route::get('/categorias', [CarSelectionController::class, 'getCategorias']);  // Rutas para obtener modelos exelente
    Route::get('/modelos', [CarSelectionController::class,'Car_models']); // trae todos los modelos
-   Route::get('/modelos-por-categoria', [CarSelectionController::class, 'getModelosPorCategoria']); // esta se llama asi http://127.0.0.1:8000/api/modelos-por-categoria?categoria_id=1  el id representa la categoria
+
+
     Route::get('/colores', [CarSelectionController::class, 'getColores']); // trae todos los colores
    
 
