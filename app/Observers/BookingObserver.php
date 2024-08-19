@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Mail;
 
 class BookingObserver
 {
-    /**
+    /**  
      * Handle the Booking "created" event.
      */
     public function created(Booking $booking): void
     {
-        $mail_client = $booking->email_cliente;
-        Mail::to($mail_client)->send(new HelloMail());
+          // Envía el correo cuando un nuevo Booking se ha creado
+        Mail::to('javierteheran19@gmail.com')->send(new HelloMail($booking));
     }
 
     /**

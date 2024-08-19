@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Booking;
+use App\Mail\HelloMail;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -34,11 +36,15 @@ class BookingController extends Controller
             'fecha_servicio' => 'nullable|date',
         ]);
 
-        if($validation->fails()){
+        if ($validation->fails()) {
             return response()->json($validation->errors(), 400);
         }
 
+        // Almacena los datos
         $carro = Booking::create($request->all());
+
+        // Envía el correo
+        Mail::to('javierteheran19@gmail.com')->send(new HelloMail($carro));
 
         return response()->json(['message' => 'Carro almacenado exitosamente', 'data' => $carro], 201);
     }

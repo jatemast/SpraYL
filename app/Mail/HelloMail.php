@@ -7,17 +7,23 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Booking;
 
 class HelloMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $booking;
+
     /**
      * Create a new message instance.
+     *
+     * @param  \App\Models\Booking  $booking
+     * @return void
      */
-    public function __construct()
+    public function __construct(Booking $booking)
     {
-
+        $this->booking = $booking;
     }
 
     /**
@@ -26,7 +32,7 @@ class HelloMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Hello Mail',
+            subject: 'Nuevo Booking Registrado',
         );
     }
 
@@ -38,15 +44,5 @@ class HelloMail extends Mailable
         return new Content(
             view: 'emails.hello',
         );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
     }
 }
