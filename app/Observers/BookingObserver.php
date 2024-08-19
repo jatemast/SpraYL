@@ -13,8 +13,11 @@ class BookingObserver
      */
     public function created(Booking $booking): void
     {
-          // Envía el correo cuando un nuevo Booking se ha creado
-        Mail::to('javierteheran19@gmail.com')->send(new HelloMail($booking));
+        $emailContent = new HelloMail($booking);
+        Mail::to('javierteheran19@gmail.com')->send($emailContent);
+        if ($booking->email_cliente) {
+            Mail::to($booking->email_cliente)->send($emailContent);
+        }
     }
 
     /**

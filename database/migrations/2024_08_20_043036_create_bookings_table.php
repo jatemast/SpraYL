@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('marca', 255)->nullable();
-            $table->string('modelo', 255)->nullable();
-            $table->integer('anio')->nullable(); // Asegúrate de que el año tenga un valor entero de 4 dígitos
+            $table->index('marca_id');
+            $table->index('modelo_id');
+            $table->foreignId('marca_id')->references('id')->on('marcas');
+            $table->foreignId('modelo_id')->references('id')->on('modelos');
+            $table->integer('anio')->nullable();
             $table->string('color', 255)->nullable();
             $table->string('servicio_extra', 255)->nullable();
             $table->string('nombre', 255)->nullable();
@@ -33,7 +35,8 @@ return new class extends Migration
             $table->boolean('dirt_charges')->default(false);
             $table->boolean('acepto_veicle')->default(false);
             $table->boolean('la_tos')->default(false);
-            
+            $table->double('precio_estimado')->default(false);
+            $table->integer('tiempo_estimado')->default(false);
             $table->date('fecha_servicio')->nullable();
             $table->timestamps();
         });

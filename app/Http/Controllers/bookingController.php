@@ -12,50 +12,37 @@ class BookingController extends Controller
 {
     public function store(Request $request)
     {
-        $validation = Validator::make($request->all(), [
-            'marca' => 'nullable|string|max:255',
-            'modelo' => 'nullable|string|max:255',
-            'anio' => 'nullable|integer|digits:4',
-            'color' => 'nullable|string|max:255',
-            'servicio_extra' => 'nullable|string|max:255',
-            'nombre' => 'nullable|string|max:255',
-            'fecha' => 'nullable|date',
-            'nombre_cliente' => 'nullable|string|max:255',
-            'apellido_cliente' => 'nullable|string|max:255',
-            'email_cliente' => 'nullable|email|max:255',
-            'telefono_cliente' => 'nullable|string|max:20',
-            'direccion_cliente' => 'nullable|string|max:255',
-            'ciudad_cliente' => 'nullable|string|max:255',
-            'estado_servico' => 'nullable|string|max:255',
-            'codigo_postal_cliente' => 'nullable|string|max:10',
-            'peticion_cliente' => 'nullable|string|max:500',
-            'descripcion_servicio' => 'nullable|string|max:500',
-            'dirt_charges' => 'nullable|boolean',
-            'acepto_veicle' => 'nullable|boolean',
-            'la_tos' => 'nullable|boolean',
-            'fecha_servicio' => 'nullable|date',
-        ]);
+        $mappedData = [
+            'precio_estimado' => $request->input('precio_servicio', null), // _make (marca)
+            'tiempo_estimado' => $request->input('tiempo_servicio', null), // _make (marca)
+            'marca_id' => $request->input('_make', null), // _make (marca)
+            'modelo_id' => $request->input('modelo', null), // modelo
+            'anio' => $request->input('year', null), // year (anio)
+            'color' => $request->input('color', null), // color
+            'servicio_extra' => $request->input('_extra', null), // _extra (servicio_extra)
+            'nombre' => $request->input('name', null), // name (nombre)
+            'fecha' => $request->input('fecha', null), // fecha
+            'nombre_cliente' => $request->input('name', null), // name (nombre_cliente)
+            'apellido_cliente' => $request->input('lastName', null), // lastName (apellido_cliente)
+            'email_cliente' => $request->input('email', null), // email_cliente
+            'telefono_cliente' => $request->input('phone', null), // phone (telefono_cliente)
+            'direccion_cliente' => $request->input('cardetails', null), // cardetails (direccion_cliente)
+            'ciudad_cliente' => $request->input('city', null), // city (ciudad_cliente)
+            'estado_servico' => $request->input('state', null), // state (estado_servico)
+            'codigo_postal_cliente' => $request->input('code', null), // code (codigo_postal_cliente)
+            'peticion_cliente' => $request->input('request', null), // request (peticion_cliente)
+            'descripcion_servicio' => $request->input('service', null), // service (descripcion_servicio)
+            'fecha_servicio' => $request->input('fecha', null) // horario (fecha_servicio)
+        ];
 
-        if ($validation->fails()) {
-            return response()->json($validation->errors(), 400);
-        }
+        // if ($validation->fails()) {
+        //     return response()->json(['errors' => $validation->errors()], 422);
+        // }
 
         // Almacena los datos
-        $carro = Booking::create($request->all());
+        $carro = Booking::create($mappedData);
 
-        // Prepara el correo
-        $emailContent = new HelloMail($carro);
-
-        // Envía el correo al administrador
-        Mail::to('javierteheran19@gmail.com')->send($emailContent);
-
-        // Envía el correo al cliente si tiene un email registrado
-        if ($carro->email_cliente) {
-            Mail::to($carro->email_cliente)->send($emailContent);
-        }
 
         return response()->json(['message' => 'Carro almacenado exitosamente', 'data' => $carro], 201);
     }
-    }
-
-
+}
