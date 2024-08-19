@@ -28,6 +28,9 @@ Route::middleware('api')->group(function () {
     Route::get('/service-extras', [ServicioExtrasController::class, 'index']);
     Route::post('/booking', [BookingController::class, 'store']);
     Route::get('/email', [ReporteController::class, 'sendHelloMail']);
-    Route::get('/vehicles', [CarSelectionController::class, 'index']);
-    Route::get('/modelos', [CarSelectionController::class, 'getModelos']);
+   // Rutas para obtener datos
+   Route::get('/marcas', [CarSelectionController::class, 'getMarcas']); // Rutas para obtener marcas exelente
+   Route::get('/categorias', [CarSelectionController::class, 'getCategorias']);  // Rutas para obtener modelos exelente
+   Route::get('/modelos', [CarSelectionController::class,'Car_models']); // Cambio a GET
+   Route::post('/modelos-por-categoria', [CarSelectionController::class, 'getModelosPorCategoria']);
 });
