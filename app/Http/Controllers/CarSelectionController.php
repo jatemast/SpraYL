@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Marca;
 use App\Models\Modelo;
 use App\Models\Categoria;
+use App\Models\Color;
 
 class CarSelectionController extends Controller
 {
@@ -78,10 +79,27 @@ class CarSelectionController extends Controller
         $request->validate([
             'categoria_id' => 'required|exists:categorias,id',
         ]);
-
-        $categoriaId = $request->input('categoria_id');
+    
+        $categoriaId = $request->query('categoria_id'); // Usar query() en lugar de input() para GET
+    
         $modelos = Modelo::where('categoria_id', $categoriaId)->get();
-
-        return response()->json($modelos);
+    
+        return response()->json([
+            'status' => 'success',
+            'data' => $modelos
+        ]);
     }
+
+
+    /**
+     * Obtener todos los colores.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getColores()
+    {
+        $colores = Color::all();
+        return response()->json($colores);
+    }
+    
 }
