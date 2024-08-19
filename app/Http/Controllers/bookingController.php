@@ -43,8 +43,16 @@ class BookingController extends Controller
         // Almacena los datos
         $carro = Booking::create($request->all());
 
-        // Envía el correo
-        Mail::to('javierteheran19@gmail.com')->send(new HelloMail($carro));
+        // Prepara el correo
+        $emailContent = new HelloMail($carro);
+
+        // Envía el correo al administrador
+        Mail::to('javierteheran19@gmail.com')->send($emailContent);
+
+        // Envía el correo al cliente si tiene un email registrado
+        if ($carro->email_cliente) {
+            Mail::to($carro->email_cliente)->send($emailContent);
+        }
 
         return response()->json(['message' => 'Carro almacenado exitosamente', 'data' => $carro], 201);
     }
