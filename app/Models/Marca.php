@@ -9,5 +9,18 @@ class Marca extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['marca'];
+     
+    protected $fillable = ['brand'];
+
+
+
+    /**
+     * Relación uno a muchos con el modelo Modelo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function modelos()
+    {
+        return $this->hasMany(Modelo::class);
+    }
 }

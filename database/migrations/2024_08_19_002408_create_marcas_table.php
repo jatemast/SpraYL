@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('marcas', function (Blueprint $table) {
             $table->id();
-            $table->string('marca')->nullable();
+            $table->string('brand'); // Marca del vehículo
             $table->timestamps();
         });
     }

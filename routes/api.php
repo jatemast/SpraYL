@@ -9,6 +9,7 @@ use App\Http\Controllers\mailController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ServicioExtrasController;
 use App\Http\Controllers\CarSelectionController;
+ 
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,6 @@ Route::middleware('api')->group(function () {
     Route::get('/service-extras', [ServicioExtrasController::class, 'index']);
     Route::post('/booking', [BookingController::class, 'store']);
     Route::get('/email', [ReporteController::class, 'sendHelloMail']);
-    Route::get('/marca', [CarSelectionController::class, 'marca']);
+    Route::get('/vehicles', [CarSelectionController::class, 'index']);
+    Route::get('/modelos', [CarSelectionController::class, 'getModelos']);
 });
