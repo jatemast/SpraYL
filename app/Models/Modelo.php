@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Modelo extends Model
 {
-    protected $fillable = ['name', 'marca_id', 'year', 'usage_rank', 'price', 'color'];
+    protected $fillable = ['name', 'marca_id', 'categoria_id', 'year', 'color'];
 
-    /**
-     * Relación inversa de muchos a uno con el modelo Marca
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function marca()
     {
         return $this->belongsTo(Marca::class);
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
     }
 }
