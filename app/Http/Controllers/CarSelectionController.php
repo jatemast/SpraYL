@@ -87,13 +87,10 @@ class CarSelectionController extends Controller
                      ->get();
 
     // Devolver los modelos como respuesta JSON
-    return response()->json([
-        'status' => 'success',
-        'data' => $modelos
-    ]);
+    return response()->json($modelos);
 }
 
-    
+
 
 
     /**
@@ -106,5 +103,5 @@ class CarSelectionController extends Controller
         $colores = Color::all();
         return response()->json($colores);
     }
-    
+
 }
