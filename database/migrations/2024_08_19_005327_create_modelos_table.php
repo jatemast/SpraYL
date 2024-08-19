@@ -17,7 +17,6 @@ return new class extends Migration
         $table->foreignId('marca_id')->constrained('marcas')->onDelete('cascade');
         $table->foreignId('categoria_id')->constrained('categorias')->onDelete('cascade');
         $table->year('year');
-        $table->string('color');
         $table->timestamps();
         });
     }
