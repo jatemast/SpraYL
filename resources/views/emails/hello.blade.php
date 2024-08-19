@@ -35,7 +35,7 @@
 <body>
     <div class="ticket">
         <div class="ticket-header text-center">
-            <h2>Spray YL Servicios</h2>
+            <h2>Spra YL Servicios</h2>
             <h4>Nuevo Booking Registrado</h4>
         </div>
         <div class="ticket-body">
