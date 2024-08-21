@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('join_ups', function (Blueprint $table) {
             $table->id();
-            $table->string('fullName');
-            $table->date('birthdate');
-            $table->string('address');
-            $table->string('phoneNumber');
-            $table->string('email')->unique();
-            $table->boolean('previousExperience');
+            $table->string('fullName')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phoneNumber')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('previousExperience', 3)->nullable(); // Solo acepta "Yes" o "No"
             $table->text('experienceDescription')->nullable();
-            $table->string('hasOwnTransportation', 2); // Solo acepta "Si" o "No"
-            $table->string('doesWorkWeekendsAndHolidays', 2); // Solo acepta "Si" o "No"
-            $table->json('daysAvailableToWork'); // Almacena un array en formato JSON
+            $table->string('hasOwnTransportation', 3)->nullable(); // Solo acepta "Yes" o "No"
+            $table->string('doesWorkWeekendsAndHolidays', 3)->nullable(); // Solo acepta "Yes" o "No"
+            $table->json('daysAvailableToWork')->nullable(); // Almacena un array en formato JSON
             $table->timestamps();
         });
     }

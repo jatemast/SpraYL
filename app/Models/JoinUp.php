@@ -10,7 +10,8 @@ class JoinUp extends Model
     use HasFactory;
 
 
-    protected $fillable = [
+      // Los atributos que se pueden asignar en masa
+      protected $fillable = [
         'fullName',
         'birthdate',
         'address',
@@ -20,6 +21,11 @@ class JoinUp extends Model
         'experienceDescription',
         'hasOwnTransportation',
         'doesWorkWeekendsAndHolidays',
-        'daysAvailableToWork'
+        'daysAvailableToWork',
+    ];
+
+    // Cast para convertir el campo JSON a un array
+    protected $casts = [
+        'daysAvailableToWork' => 'array',
     ];
 }

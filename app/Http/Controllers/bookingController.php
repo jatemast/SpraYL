@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Booking;
 use App\Mail\HelloMail;
 use App\Models\JoinUp;
-use Illuminate\Validation\ValidationException;  
+use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 
@@ -70,18 +70,21 @@ class BookingController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'fullName' => 'required|string|max:255',
-                'birthdate' => 'required|date',
-                'address' => 'required|string|max:255',
-                'phoneNumber' => 'required|string|max:20',
-                'email' => 'required|string|email|max:255|unique:join_ups',
-                'previousExperience' => 'required|boolean',
+
+                'fullName' => 'nullable|string|max:255',
+                'birthdate' => 'nullable|date',
+                'address' => 'nullable|string|max:255',
+                'phoneNumber' => 'nullable|string|max:20',
+                'email' => 'nullable|string|email|max:255|unique:join_ups',
+                'previousExperience' => 'nullable|string|in:Yes,No|max:3',
                 'experienceDescription' => 'nullable|string',
-                'hasOwnTransportation' => 'required|string|in:Si,No',
-                'doesWorkWeekendsAndHolidays' => 'required|string|in:Si,No',
-                'daysAvailableToWork' => 'required|array',
-                'daysAvailableToWork.*' => 'string|max:10',
-            ]);
+                'hasOwnTransportation' => 'nullable|string|in:Yes,No|max:3',
+                'doesWorkWeekendsAndHolidays' => 'nullable|string|in:Yes,No|max:3',
+                'daysAvailableToWork' => 'nullable|array',
+                'daysAvailableToWork.*' => 'string|max:10', // Limitar longitud de los días
+                ]);
+
+
 
             $joinUp = JoinUp::create(array_merge(
                 $validatedData,
