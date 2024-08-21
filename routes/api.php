@@ -1,11 +1,7 @@
 <?php
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\serviciosextras;
-use App\Http\Controllers\mailController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ServicioExtrasController;
 use App\Http\Controllers\CarSelectionController;
@@ -28,14 +24,10 @@ Route::middleware('api')->group(function () {
     Route::get('/service-extras', [ServicioExtrasController::class, 'index']);
     Route::post('/booking', [BookingController::class, 'store']);
     Route::get('/email', [ReporteController::class, 'sendHelloMail']);
-   // Rutas para obtener datos
-   Route::get('/marcas', [CarSelectionController::class, 'getMarcas']); // Rutas para obtener marcas exelente
-   Route::get('/categorias', [CarSelectionController::class, 'getCategorias']);  // Rutas para obtener modelos exelente
-   Route::get('/modelos', [CarSelectionController::class,'Car_models']); // trae todos los modelos
-   Route::get('/modelos-por-categoria/{categoria_id}/marca/{marca_id}/modelo/{search?}', [CarSelectionController::class, 'getModelosPorCategoria']);
-
-
-   Route::get('/colores', [CarSelectionController::class, 'getColores']); // trae todos los colores
-
-
+    // Rutas para obtener datos
+    Route::get('/marcas', [CarSelectionController::class, 'getMarcas']); // Rutas para obtener marcas exelente
+    Route::get('/categorias', [CarSelectionController::class, 'getCategorias']);  // Rutas para obtener modelos exelente
+    Route::get('/modelos/{marca_id}', [CarSelectionController::class, 'Car_models']); // trae todos los modelos
+    Route::get('/modelos-por-categoria/{categoria_id}/marca/{marca_id}', [CarSelectionController::class, 'getModelosPorCategoria']);
+    Route::get('/colores', [CarSelectionController::class, 'getColores']); // trae todos los colores
 });

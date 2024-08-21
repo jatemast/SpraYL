@@ -27,26 +27,12 @@ class CarSelectionController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function Car_models()
+    public function Car_models(Request $request)
     {
+        $brand_id = $request->marca_id;
         try {
-            // Obtén todos los modelos de autos desde la base de datos
-            $carModels = Modelo::all();
-
-            // Verifica si se encontraron modelos
-            if ($carModels->isEmpty()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'No se encontraron modelos de autos.',
-                ], 404);
-            }
-
-            // Devuelve los modelos de autos en formato JSON
-            return response()->json([
-                'success' => true,
-                'data' => $carModels
-            ], 200);
-
+            $carModels = Modelo::with(['categoria'])->where('marca_id', $brand_id)->get();
+            return response()->json($carModels);
         } catch (\Exception $e) {
             // Maneja cualquier excepción que pueda ocurrir
             return response()->json([
@@ -74,32 +60,21 @@ class CarSelectionController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getModelosPorCategoria($categoria_id, $marca_id, $search = null)
+    public function getModelosPorCategoria($categoria_id, $marca_id)
     {
         // Validar que los IDs existan
         if (!Categoria::where('id', $categoria_id)->exists() || !Marca::where('id', $marca_id)->exists()) {
             return response()->json(['status' => 'error', 'message' => 'Invalid category or brand ID'], 400);
         }
 
-        // Filtrar los modelos por categoría y marca, y buscar por nombre si se proporciona
+        // Filtrar los modelos por categoría y marca
         $modelos = Modelo::where('categoria_id', $categoria_id)
-                         ->where('marca_id', $marca_id)
-                         ->when($search, function ($query, $search) {
-                             return $query->where('name', 'LIKE', '%' . $search . '%');
-                         })
-                         ->get();
-
-        // Verificar si no se encontraron modelos
-        if ($modelos->isEmpty()) {
-            return response()->json(['status' => 'error', 'message' => 'Modelo no encontrado'], 404);
-        }
+            ->where('marca_id', $marca_id)
+            ->get();
 
         // Devolver los modelos como respuesta JSON
         return response()->json($modelos);
     }
-
-
-
 
 
 
@@ -114,5 +89,4 @@ class CarSelectionController extends Controller
         $colores = Color::all();
         return response()->json($colores);
     }
-
 }
