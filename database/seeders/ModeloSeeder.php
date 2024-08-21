@@ -123,7 +123,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'NV Cargo', 'marca_id' => 5, 'categoria_id' => 4, 'year' => 2024],
              ['name' => 'NV Passenger', 'marca_id' => 5, 'categoria_id' => 4, 'year' => 2024],
              ['name' => 'NV200', 'marca_id' => 5, 'categoria_id' => 4, 'year' => 2024],
- 
+
              // Modelos para la marca Hyundai
              ['name' => 'Elantra', 'marca_id' => 6, 'categoria_id' => 1, 'year' => 2024],
              ['name' => 'Sonata', 'marca_id' => 6, 'categoria_id' => 1, 'year' => 2024],
@@ -145,7 +145,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Azera', 'marca_id' => 6, 'categoria_id' => 1, 'year' => 2024],
              ['name' => 'Veracruz', 'marca_id' => 6, 'categoria_id' => 2, 'year' => 2024],
              ['name' => 'XG350', 'marca_id' => 6, 'categoria_id' => 1, 'year' => 2024],
- 
+
              // Modelos para la marca Kia
              ['name' => 'Optima', 'marca_id' => 7, 'categoria_id' => 1, 'year' => 2024],
              ['name' => 'Sorento', 'marca_id' => 7, 'categoria_id' => 2, 'year' => 2024],
@@ -167,7 +167,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Spectra', 'marca_id' => 7, 'categoria_id' => 1, 'year' => 2024],
              ['name' => 'Rondo', 'marca_id' => 7, 'categoria_id' => 4, 'year' => 2024],
              ['name' => 'XCeed', 'marca_id' => 7, 'categoria_id' => 2, 'year' => 2024],
- 
+
              // Modelos para la marca Subaru
              ['name' => 'Outback', 'marca_id' => 8, 'categoria_id' => 2, 'year' => 2024],
              ['name' => 'Forester', 'marca_id' => 8, 'categoria_id' => 2, 'year' => 2024],
@@ -562,7 +562,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'Boxster S', 'marca_id' => 25, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'Cayman S', 'marca_id' => 25, 'categoria_id' => 1, 'year' => 2024],
               ['name' => '911 Carrera 4S', 'marca_id' => 25, 'categoria_id' => 1, 'year' => 2024],
-  
+
               // Modelos para la marca Land Rover
               ['name' => 'Range Rover', 'marca_id' => 26, 'categoria_id' => 5, 'year' => 2024],
               ['name' => 'Range Rover Sport', 'marca_id' => 26, 'categoria_id' => 5, 'year' => 2024],
@@ -584,7 +584,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'Discovery Sport SE', 'marca_id' => 26, 'categoria_id' => 5, 'year' => 2024],
               ['name' => 'Defender X', 'marca_id' => 26, 'categoria_id' => 5, 'year' => 2024],
               ['name' => 'Range Rover First Edition', 'marca_id' => 26, 'categoria_id' => 5, 'year' => 2024],
-  
+
               // Modelos para la marca Jaguar
               ['name' => 'F-PACE', 'marca_id' => 27, 'categoria_id' => 5, 'year' => 2024],
               ['name' => 'E-PACE', 'marca_id' => 27, 'categoria_id' => 5, 'year' => 2024],
@@ -606,7 +606,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'XF R-Dynamic', 'marca_id' => 27, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'XJ XJR575', 'marca_id' => 27, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'F-Type P300', 'marca_id' => 27, 'categoria_id' => 1, 'year' => 2024],
-  
+
               // Modelos para la marca Mini
               ['name' => 'Cooper', 'marca_id' => 28, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'Cooper S', 'marca_id' => 28, 'categoria_id' => 1, 'year' => 2024],
@@ -735,7 +735,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'G70 RWD', 'marca_id' => 33, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'G80 AWD', 'marca_id' => 33, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'G90 AWD', 'marca_id' => 33, 'categoria_id' => 1, 'year' => 2024],
-  
+
               // Modelos para la marca Alfa Romeo
               ['name' => 'Giulia', 'marca_id' => 34, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'Stelvio', 'marca_id' => 34, 'categoria_id' => 5, 'year' => 2024],
@@ -794,7 +794,7 @@ class ModeloSeeder extends Seeder
                         ['name' => 'Phantom Drophead Coupé', 'marca_id' => 38, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Phantom Coupé', 'marca_id' => 38, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Silver Wraith', 'marca_id' => 38, 'categoria_id' => 1, 'year' => 2024],
-            
+
                         // Ferrari models
                         ['name' => '488 GTB', 'marca_id' => 39, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => '488 Spider', 'marca_id' => 39, 'categoria_id' => 1, 'year' => 2024],
@@ -806,7 +806,7 @@ class ModeloSeeder extends Seeder
                         ['name' => 'Ferrari Purosangue', 'marca_id' => 39, 'categoria_id' => 2, 'year' => 2024],
                         ['name' => '812 Superfast', 'marca_id' => 39, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Monza SP1', 'marca_id' => 39, 'categoria_id' => 1, 'year' => 2024],
-            
+
                         // Lamborghini models
                         ['name' => 'Aventador', 'marca_id' => 40, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Huracán', 'marca_id' => 40, 'categoria_id' => 1, 'year' => 2024],
@@ -818,7 +818,7 @@ class ModeloSeeder extends Seeder
                         ['name' => 'Sián FKP 37', 'marca_id' => 40, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Terzo Millennio', 'marca_id' => 40, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Essenza SCV12', 'marca_id' => 40, 'categoria_id' => 1, 'year' => 2024],
-            
+
                         // Aston Martin models
                         ['name' => 'DB11', 'marca_id' => 41, 'categoria_id' => 1, 'year' => 2024],
                         ['name' => 'Vantage', 'marca_id' => 41, 'categoria_id' => 1, 'year' => 2024],
@@ -904,7 +904,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'Celerio', 'marca_id' => 47, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'S-Cross', 'marca_id' => 47, 'categoria_id' => 2, 'year' => 2024],
               ['name' => 'Ertiga', 'marca_id' => 47, 'categoria_id' => 4, 'year' => 2024],
-  
+
               // Saab models
               ['name' => '9-3', 'marca_id' => 48, 'categoria_id' => 1, 'year' => 2024],
               ['name' => '9-5', 'marca_id' => 48, 'categoria_id' => 1, 'year' => 2024],
@@ -916,7 +916,7 @@ class ModeloSeeder extends Seeder
               ['name' => '9-2X', 'marca_id' => 48, 'categoria_id' => 1, 'year' => 2024],
               ['name' => '600', 'marca_id' => 48, 'categoria_id' => 1, 'year' => 2024],
               ['name' => '99', 'marca_id' => 48, 'categoria_id' => 1, 'year' => 2024],
-  
+
               // Pontiac models
               ['name' => 'Firebird', 'marca_id' => 49, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'Trans Am', 'marca_id' => 49, 'categoria_id' => 1, 'year' => 2024],
@@ -928,7 +928,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'Grand Prix', 'marca_id' => 49, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'GTO', 'marca_id' => 49, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'Sunfire', 'marca_id' => 49, 'categoria_id' => 1, 'year' => 2024],
-  
+
               // Saturn models
               ['name' => 'S-Series', 'marca_id' => 50, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'L-Series', 'marca_id' => 50, 'categoria_id' => 1, 'year' => 2024],
@@ -940,7 +940,7 @@ class ModeloSeeder extends Seeder
               ['name' => 'Relay', 'marca_id' => 50, 'categoria_id' => 4, 'year' => 2024],
               ['name' => 'Astra', 'marca_id' => 50, 'categoria_id' => 1, 'year' => 2024],
               ['name' => 'Previa', 'marca_id' => 50, 'categoria_id' => 4, 'year' => 2024],
-  
+
               // Hummer models
               ['name' => 'H1', 'marca_id' => 51, 'categoria_id' => 2, 'year' => 2024],
               ['name' => 'H2', 'marca_id' => 51, 'categoria_id' => 2, 'year' => 2024],
@@ -1114,7 +1114,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Tucker Torpedo Sports Coupe', 'marca_id' => 55, 'categoria_id' => 1, 'year' => 1948],
              ['name' => 'Tucker Torpedo Cabriolet', 'marca_id' => 55, 'categoria_id' => 1, 'year' => 1948],
              ['name' => 'Tucker Torpedo Military', 'marca_id' => 55, 'categoria_id' => 1, 'year' => 1948],
- 
+
              // Pagani models
              ['name' => 'Zonda C12', 'marca_id' => 56, 'categoria_id' => 1, 'year' => 1999],
              ['name' => 'Zonda F', 'marca_id' => 56, 'categoria_id' => 1, 'year' => 2005],
@@ -1136,7 +1136,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Huayra Codalunga', 'marca_id' => 56, 'categoria_id' => 1, 'year' => 2022],
              ['name' => 'Zonda Zun', 'marca_id' => 56, 'categoria_id' => 1, 'year' => 2008],
              ['name' => 'Huayra R', 'marca_id' => 56, 'categoria_id' => 1, 'year' => 2021],
- 
+
              // Koenigsegg models
              ['name' => 'CC8S', 'marca_id' => 57, 'categoria_id' => 1, 'year' => 2002],
              ['name' => 'CCR', 'marca_id' => 57, 'categoria_id' => 1, 'year' => 2004],
@@ -1158,7 +1158,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Jesko Red Cherry Edition', 'marca_id' => 57, 'categoria_id' => 1, 'year' => 2021],
              ['name' => 'Jesko Hydra Edition', 'marca_id' => 57, 'categoria_id' => 1, 'year' => 2022],
              ['name' => 'Jesko Valhalla Edition', 'marca_id' => 57, 'categoria_id' => 1, 'year' => 2022],
- 
+
              // Spyker models
              ['name' => 'C8', 'marca_id' => 58, 'categoria_id' => 1, 'year' => 2000],
              ['name' => 'C8 Laviolette', 'marca_id' => 58, 'categoria_id' => 1, 'year' => 2001],
@@ -1295,7 +1295,7 @@ class ModeloSeeder extends Seeder
                ['name' => 'Mono Track', 'marca_id' => 63, 'categoria_id' => 1, 'year' => 2020],
                ['name' => 'Mono Prototype', 'marca_id' => 63, 'categoria_id' => 1, 'year' => 2010],
                ['name' => 'Mono S', 'marca_id' => 63, 'categoria_id' => 1, 'year' => 2021],
-   
+
                // Radical models
                ['name' => 'SR1', 'marca_id' => 64, 'categoria_id' => 1, 'year' => 2012],
                ['name' => 'SR3', 'marca_id' => 64, 'categoria_id' => 1, 'year' => 2001],
@@ -1384,7 +1384,7 @@ class ModeloSeeder extends Seeder
                ['name' => 'Saleen S1 Racing', 'marca_id' => 67, 'categoria_id' => 1, 'year' => 2021],
                ['name' => 'Saleen S7 Twin Turbo X', 'marca_id' => 67, 'categoria_id' => 1, 'year' => 2007],
                ['name' => 'Saleen S281 E', 'marca_id' => 67, 'categoria_id' => 1, 'year' => 2009],
-   
+
                // Shelby models
                ['name' => 'Cobra 427', 'marca_id' => 68, 'categoria_id' => 1, 'year' => 1965],
                ['name' => 'GT350', 'marca_id' => 68, 'categoria_id' => 1, 'year' => 1965],
@@ -1406,7 +1406,7 @@ class ModeloSeeder extends Seeder
                ['name' => 'Shelby Cobra 427 S/C', 'marca_id' => 68, 'categoria_id' => 1, 'year' => 1966],
                ['name' => 'Shelby Cobra 289 FIA', 'marca_id' => 68, 'categoria_id' => 1, 'year' => 1964],
                ['name' => 'Shelby GT500KR 2023', 'marca_id' => 68, 'categoria_id' => 1, 'year' => 2023],
-   
+
                // Callaway models
                ['name' => 'Corvette C7 Z06 Callaway', 'marca_id' => 69, 'categoria_id' => 1, 'year' => 2017],
                ['name' => 'Corvette C6 Callaway', 'marca_id' => 69, 'categoria_id' => 1, 'year' => 2008],
@@ -1428,7 +1428,7 @@ class ModeloSeeder extends Seeder
                ['name' => 'Callaway Camaro Z28', 'marca_id' => 69, 'categoria_id' => 1, 'year' => 2019],
                ['name' => 'Callaway C16 Speedster', 'marca_id' => 69, 'categoria_id' => 1, 'year' => 2008],
                ['name' => 'Callaway C8 Z06', 'marca_id' => 69, 'categoria_id' => 1, 'year' => 2022],
-   
+
                // Ruf models
                ['name' => 'Ruf CTR Yellowbird', 'marca_id' => 70, 'categoria_id' => 1, 'year' => 1987],
                ['name' => 'Ruf RT 12', 'marca_id' => 70, 'categoria_id' => 1, 'year' => 2010],
@@ -1563,7 +1563,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Vector AVS 2007', 'marca_id' => 75, 'categoria_id' => 1, 'year' => 2007],
              ['name' => 'Vector W8 1994', 'marca_id' => 75, 'categoria_id' => 1, 'year' => 1994],
              ['name' => 'Vector M12 2002', 'marca_id' => 75, 'categoria_id' => 1, 'year' => 2002],
- 
+
              // Mosler models
              ['name' => 'MT900', 'marca_id' => 76, 'categoria_id' => 1, 'year' => 2001],
              ['name' => 'MT900S', 'marca_id' => 76, 'categoria_id' => 1, 'year' => 2003],
@@ -1585,7 +1585,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Mosler MT900 2005', 'marca_id' => 76, 'categoria_id' => 1, 'year' => 2005],
              ['name' => 'Mosler MT900 GTR 2012', 'marca_id' => 76, 'categoria_id' => 1, 'year' => 2012],
              ['name' => 'Mosler Raptor 2010', 'marca_id' => 76, 'categoria_id' => 1, 'year' => 2010],
- 
+
              // Panoz models
              ['name' => 'Esperante', 'marca_id' => 77, 'categoria_id' => 1, 'year' => 1998],
              ['name' => 'Esperante GT', 'marca_id' => 77, 'categoria_id' => 1, 'year' => 2001],
@@ -1607,7 +1607,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Panoz GT-R 2004', 'marca_id' => 77, 'categoria_id' => 1, 'year' => 2004],
              ['name' => 'Panoz AIV Roadster 1994', 'marca_id' => 77, 'categoria_id' => 1, 'year' => 1994],
              ['name' => 'Panoz Esperante Roadster 2002', 'marca_id' => 77, 'categoria_id' => 1, 'year' => 2002],
- 
+
              // SSC models
              ['name' => 'Ultimate Aero', 'marca_id' => 78, 'categoria_id' => 1, 'year' => 2007],
              ['name' => 'Ultimate Aero TT', 'marca_id' => 78, 'categoria_id' => 1, 'year' => 2009],
@@ -1840,7 +1840,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Nikola Two 2025', 'marca_id' => 87, 'categoria_id' => 1, 'year' => 2025],
              ['name' => 'Nikola Tre 2026', 'marca_id' => 87, 'categoria_id' => 1, 'year' => 2026],
              ['name' => 'Nikola Badger 2026', 'marca_id' => 87, 'categoria_id' => 1, 'year' => 2026],
- 
+
              // Faraday Future models
              ['name' => 'FF 91', 'marca_id' => 88, 'categoria_id' => 1, 'year' => 2021],
              ['name' => 'FF 81', 'marca_id' => 88, 'categoria_id' => 1, 'year' => 2021],
@@ -1862,7 +1862,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'FF V9 2026', 'marca_id' => 88, 'categoria_id' => 1, 'year' => 2026],
              ['name' => 'FF 91 2027', 'marca_id' => 88, 'categoria_id' => 1, 'year' => 2027],
              ['name' => 'FF 81 2027', 'marca_id' => 88, 'categoria_id' => 1, 'year' => 2027],
- 
+
              // Byton models
              ['name' => 'M-Byte', 'marca_id' => 89, 'categoria_id' => 1, 'year' => 2021],
              ['name' => 'K-Byte', 'marca_id' => 89, 'categoria_id' => 1, 'year' => 2021],
@@ -1884,7 +1884,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'K-Byte Pro 2025', 'marca_id' => 89, 'categoria_id' => 1, 'year' => 2025],
              ['name' => 'M-Byte Pro 2026', 'marca_id' => 89, 'categoria_id' => 1, 'year' => 2026],
              ['name' => 'K-Byte Pro 2026', 'marca_id' => 89, 'categoria_id' => 1, 'year' => 2026],
- 
+
              // Polestar models
              ['name' => 'Polestar 1', 'marca_id' => 90, 'categoria_id' => 1, 'year' => 2021],
              ['name' => 'Polestar 2', 'marca_id' => 90, 'categoria_id' => 1, 'year' => 2021],
@@ -2010,7 +2010,7 @@ class ModeloSeeder extends Seeder
              ['name' => 'Pininfarina H2 GT 2025', 'marca_id' => 95, 'categoria_id' => 1, 'year' => 2025],
              ['name' => 'Pininfarina H2 GT 2026', 'marca_id' => 95, 'categoria_id' => 1, 'year' => 2026],
              ['name' => 'Pininfarina H2 GT 2027', 'marca_id' => 95, 'categoria_id' => 1, 'year' => 2027],
- 
+
              // Drako models
              ['name' => 'GTE', 'marca_id' => 96, 'categoria_id' => 1, 'year' => 2021],
              ['name' => 'GTE 2022', 'marca_id' => 96, 'categoria_id' => 1, 'year' => 2022],
@@ -2030,24 +2030,9 @@ class ModeloSeeder extends Seeder
              ['name' => 'Drako Dragon Pro 2025', 'marca_id' => 96, 'categoria_id' => 1, 'year' => 2025],
              ['name' => 'Drako Dragon Pro 2026', 'marca_id' => 96, 'categoria_id' => 1, 'year' => 2026],
              ['name' => 'Drako Dragon Pro 2027', 'marca_id' => 96, 'categoria_id' => 1, 'year' => 2027],
-         
 
-
-
-            
-
-
-
-   
-         
-
-        
-            
-  
-        
-          
         ];
-        
+
         foreach ($modelos as $modelo) {
             Modelo::create($modelo);
         }

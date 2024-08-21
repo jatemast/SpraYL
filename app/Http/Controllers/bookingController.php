@@ -6,43 +6,60 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Booking;
 use App\Mail\HelloMail;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
     public function store(Request $request)
     {
-        $mappedData = [
-            'precio_estimado' => $request->input('precio_servicio', null), // _make (marca)
-            'tiempo_estimado' => $request->input('tiempo_servicio', null), // _make (marca)
-            'marca_id' => $request->input('_make', null), // _make (marca)
-            'modelo_id' => $request->input('modelo', null), // modelo
-            'anio' => $request->input('year', null), // year (anio)
-            'color' => $request->input('color', null), // color
-            'servicio_extra' => $request->input('_extra', null), // _extra (servicio_extra)
-            'nombre' => $request->input('name', null), // name (nombre)
-            'fecha' => $request->input('fecha', null), // fecha
-            'nombre_cliente' => $request->input('name', null), // name (nombre_cliente)
-            'apellido_cliente' => $request->input('lastName', null), // lastName (apellido_cliente)
-            'email_cliente' => $request->input('email', null), // email_cliente
-            'telefono_cliente' => $request->input('phone', null), // phone (telefono_cliente)
-            'direccion_cliente' => $request->input('cardetails', null), // cardetails (direccion_cliente)
-            'ciudad_cliente' => $request->input('city', null), // city (ciudad_cliente)
-            'estado_servico' => $request->input('state', null), // state (estado_servico)
-            'codigo_postal_cliente' => $request->input('code', null), // code (codigo_postal_cliente)
-            'peticion_cliente' => $request->input('request', null), // request (peticion_cliente)
-            'descripcion_servicio' => $request->input('service', null), // service (descripcion_servicio)
-            'fecha_servicio' => $request->input('fecha', null) // horario (fecha_servicio)
+        $rules = [
+            'marca_id' => 'required|integer',
+            'modelo_id' => 'required|integer',
+            'anio' => 'required|integer|digits:4',
+            'color' => 'required|string|max:255',
+            'servicio_extra' => 'nullable|string|max:255',
+            'nombre_cliente' => 'required|string|max:255',
+            'apellido_cliente' => 'required|string|max:255',
+            'email_cliente' => 'required|email|max:255',
+            'telefono_cliente' => 'required|string|max:15',
+            'direccion_cliente' => 'required|string|max:255',
+            'ciudad_cliente' => 'required|string|max:255',
+            'estado_cliente' => 'required|string|max:255',
+            'codigo_postal_cliente' => 'required|string|max:10',
+            'peticion_cliente' => 'nullable|string|max:255',
+            'descripcion_servicio' => 'nullable|string|max:255',
+            'dirt_charges' => 'required',
+            'acepto_veicle' => 'required',
+            'la_tos' => 'required',
+            'fecha_servicio' => 'required|date',
+            'hora_servicio' => 'required|string|max:10',
+            'tiempo_estimado' => 'required',
+            'precio_estimado' => 'required|numeric',
         ];
 
-        // if ($validation->fails()) {
-        //     return response()->json(['errors' => $validation->errors()], 422);
-        // }
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), "message" => "Faltan algunos campos", "type" => "error"]);
+        }
+        $horaServicio = $request->input('hora_servicio');
+        $horaServicio24h = Carbon::createFromFormat('g:i a', $horaServicio)->format('H:i:s');
+
+        $bookingData = $validator->validated();
+        $bookingData['hora_servicio'] = $horaServicio24h;
+
+        $booking = Booking::create($bookingData);
+
+        return response()->json(["message" => "Booking Creado Exitosamente", "type" => "success"], 201);
+
+
+
 
         // Almacena los datos
         $carro = Booking::create($mappedData);
 
 
-        return response()->json(['message' => 'Carro almacenado exitosamente', 'data' => $carro], 201);
+        return response()->json(['message' => 'Booking creado Exitosamente.', 'data' => $carro], 201);
     }
 }

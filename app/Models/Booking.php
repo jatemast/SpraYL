@@ -25,7 +25,7 @@ class Booking extends Model
         'telefono_cliente',
         'direccion_cliente',
         'ciudad_cliente',
-        'estado_servico',
+        'estado_cliente',
         'codigo_postal_cliente',
         'peticion_cliente',
         'descripcion_servicio',
@@ -34,7 +34,9 @@ class Booking extends Model
         'la_tos',
         'fecha_servicio',
         'tiempo_estimado',
-        'precio_estimado'
+        'precio_estimado',
+        'fecha_servicio',
+        'hora_servicio'
     ];
 
 }
