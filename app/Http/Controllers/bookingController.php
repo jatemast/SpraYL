@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Booking;
-use App\Mail\HelloMail;
 use App\Models\JoinUp;
 use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
