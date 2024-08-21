@@ -19,8 +19,7 @@ return new class extends Migration
             $table->foreignId('modelo_id')->references('id')->on('modelos');
             $table->integer('anio')->nullable();
             $table->string('color', 255)->nullable();
-            $table->string('servicio_extra', 255)->nullable();
-            $table->string('nombre', 255)->nullable();
+            $table->longText('servicio_extra')->nullable();
             $table->date('fecha')->nullable();
             $table->string('nombre_cliente', 255)->nullable();
             $table->string('apellido_cliente', 255)->nullable();
@@ -28,16 +27,17 @@ return new class extends Migration
             $table->string('telefono_cliente', 20)->nullable();
             $table->string('direccion_cliente', 255)->nullable();
             $table->string('ciudad_cliente', 255)->nullable();
-            $table->string('estado_servico', 255)->nullable();
+            $table->string('estado_cliente', 255)->nullable();
             $table->string('codigo_postal_cliente', 10)->nullable();
             $table->text('peticion_cliente')->nullable();
             $table->text('descripcion_servicio')->nullable();
-            $table->boolean('dirt_charges')->default(false);
-            $table->boolean('acepto_veicle')->default(false);
-            $table->boolean('la_tos')->default(false);
+            $table->string('dirt_charges')->default('YES');
+            $table->string('acepto_veicle')->default('YES');
+            $table->string('la_tos')->default('YES');
             $table->double('precio_estimado')->default(false);
             $table->integer('tiempo_estimado')->default(false);
             $table->date('fecha_servicio')->nullable();
+            $table->time('hora_servicio')->nullable();
             $table->timestamps();
         });
     }
