@@ -7,6 +7,7 @@ use App\Http\Controllers\ServicioExtrasController;
 use App\Http\Controllers\CarSelectionController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,4 +31,6 @@ Route::middleware('api')->group(function () {
     Route::get('/modelos/{marca_id}', [CarSelectionController::class, 'Car_models']); // trae todos los modelos
     Route::get('/modelos-por-categoria/{categoria_id}/marca/{marca_id}', [CarSelectionController::class, 'getModelosPorCategoria']);
     Route::get('/colores', [CarSelectionController::class, 'getColores']); // trae todos los colores
+
+    Route::post('/join-up', [BookingController::class, 'JoinUp']);
 });
