@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Booking;
-use App\Mail\HelloMail;
 use App\Models\JoinUp;
 use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -82,7 +80,7 @@ class BookingController extends Controller
                 'doesWorkWeekendsAndHolidays' => 'nullable|string|in:Yes,No|max:3',
                 'daysAvailableToWork' => 'nullable|array',
                 'daysAvailableToWork.*' => 'string|max:10', // Limitar longitud de los días
-                ]);
+            ]);
 
 
 
@@ -91,14 +89,11 @@ class BookingController extends Controller
                 ['daysAvailableToWork' => json_encode($validatedData['daysAvailableToWork'])]
             ));
 
-            return response()->json(['message' => 'Datos almacenados exitosamente', 'data' => $joinUp], 201);
-
+            return response()->json(['message' => 'Datos almacenados exitosamente', 'success' => true], 201);
         } catch (ValidationException $e) {
             return response()->json(['message' => 'Error en la validación de los datos', 'errors' => $e->errors()], 422);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Error inesperado al procesar la solicitud', 'error' => $e->getMessage()], 500);
         }
     }
-
-
 }
