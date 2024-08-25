@@ -25,7 +25,7 @@ Route::get('/google-auth/redirect', [GoogleController::class, 'redirect']);
 Route::get('/google-auth/callback', [GoogleController::class, 'callback']);
 
 
-
+// Rutas autenticacion convencional clasica
 Route::middleware('api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
