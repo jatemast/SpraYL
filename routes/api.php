@@ -7,6 +7,7 @@ use App\Http\Controllers\ServicioExtrasController;
 use App\Http\Controllers\CarSelectionController;
 use App\Http\Controllers\GoogleController;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\AppleController;
 
 
 
@@ -24,6 +25,12 @@ use Laravel\Socialite\Facades\Socialite;
 Route::get('/google-auth/redirect', [GoogleController::class, 'redirect']);
 Route::get('/google-auth/callback', [GoogleController::class, 'callback']);
 
+//Rutas autenticacion con apple
+
+Route::get('apple/redirect', [AppleController::class, 'redirect']);
+Route::get('apple/callback', [AppleController::class, 'callback']);
+
+
 
 // Rutas autenticacion convencional clasica
 Route::middleware('api')->group(function () {
@@ -31,6 +38,7 @@ Route::middleware('api')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
  
  
+//Rutas autenticacion con apple
 
 
 
