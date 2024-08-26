@@ -8,6 +8,7 @@ use App\Http\Controllers\CarSelectionController;
 use App\Http\Controllers\GoogleController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AppleController;
+use App\Http\Controllers\FacebookController;
 
 
 
@@ -29,6 +30,10 @@ Route::get('/google-auth/callback', [GoogleController::class, 'callback']);
 
 Route::get('apple/redirect', [AppleController::class, 'redirect']);
 Route::get('apple/callback', [AppleController::class, 'callback']);
+
+//Rutas autenticacion con facebook
+Route::get('/facebook-auth/redirect', [FacebookController::class, 'redirect']);
+Route::get('/facebook-auth/callback', [FacebookController::class, 'callback']);
 
 
 
