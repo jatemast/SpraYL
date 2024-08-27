@@ -44,7 +44,7 @@ Route::middleware('api')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum'); 
  
-//Rutas autenticacion con apple
+ 
 
 
 
@@ -64,7 +64,7 @@ Route::middleware('api')->group(function () {
 });
 
 
-// rutas crud de usuario logueado
+// rutas crud de usuario logueado funcionando al 100% 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'show']);
     Route::put('/user', [UserController::class, 'update']);
