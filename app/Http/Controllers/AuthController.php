@@ -58,4 +58,15 @@ class AuthController extends Controller
             'token_type' => 'Bearer',
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        // Revoke all tokens for the authenticated user
+        $user = Auth::user();
+        $user->tokens()->delete();
+
+        return response()->json([
+            'message' => 'Sesión cerrada con éxito'
+        ]);
+    }
 }

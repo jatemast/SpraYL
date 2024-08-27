@@ -9,6 +9,7 @@ use App\Http\Controllers\GoogleController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AppleController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\UserController;
 
 
 
@@ -41,7 +42,7 @@ Route::get('/facebook-auth/callback', [FacebookController::class, 'callback']);
 Route::middleware('api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
- 
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum'); 
  
 //Rutas autenticacion con apple
 
@@ -60,4 +61,12 @@ Route::middleware('api')->group(function () {
     Route::get('/colores', [CarSelectionController::class, 'getColores']); // trae todos los colores
 
     Route::post('/join-up', [BookingController::class, 'JoinUp']);
+});
+
+
+// rutas crud de usuario logueado
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', [UserController::class, 'show']);
+    Route::put('/user', [UserController::class, 'update']);
+    Route::delete('/user', [UserController::class, 'destroy']);
 });
